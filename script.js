@@ -169,12 +169,31 @@ function initPostbox() {
     if (!postboxWrapper || !postbox) return;
 
     let isOpened = false;
+    let touchHandled = false;
 
-    postboxWrapper.addEventListener('click', handlePostboxClick);
-    postboxWrapper.addEventListener('touchstart', (e) => {
-        e.preventDefault();
+    // Use pointer events for unified handling (works on both mobile and desktop)
+    postboxWrapper.addEventListener('pointerup', (e) => {
+        e.stopPropagation();
         handlePostboxClick();
-    }, { passive: false });
+    });
+
+    // Fallback for older browsers - touchend
+    postboxWrapper.addEventListener('touchend', (e) => {
+        if (!touchHandled) {
+            touchHandled = true;
+            handlePostboxClick();
+            // Reset after a short delay
+            setTimeout(() => { touchHandled = false; }, 300);
+        }
+    }, { passive: true });
+
+    // Click fallback for desktop
+    postboxWrapper.addEventListener('click', (e) => {
+        // Prevent double-firing with pointer events
+        if (!touchHandled) {
+            handlePostboxClick();
+        }
+    });
 
     function handlePostboxClick() {
         if (isOpened) return;
