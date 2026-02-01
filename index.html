@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Message For You 💕</title>
+    <meta name="description" content="A special surprise message just for you">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="hearts-container" id="heartsContainer"></div>
+    
+    <!-- Sparkle Particles -->
+    <div class="sparkles-container" id="sparklesContainer"></div>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        
+        <!-- Section 1: Congratulations -->
+        <section class="section congratulations-section" id="congratsSection">
+            <div class="congrats-content">
+                <div class="crown-icon">👑</div>
+                <h1 class="congrats-title">
+                    <span class="line">Congratulations,</span>
+                    <span class="line highlight">My Love!</span>
+                </h1>
+                <div class="achievement-card">
+                    <div class="achievement-icon">🏆</div>
+                    <p class="achievement-text">
+                        You did it! You stayed strong and <strong>didn't eat any sweets!</strong>
+                    </p>
+                    <p class="achievement-subtext">
+                        I'm so incredibly proud of you for sticking to your goal. Your determination and willpower are truly inspiring! 💪✨
+                    </p>
+                </div>
+                <div class="scroll-indicator" id="scrollIndicator">
+                    <span>Your reward awaits</span>
+                    <div class="scroll-arrow">↓</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Reward Reveal -->
+        <section class="section reward-section" id="rewardSection">
+            <div class="reward-content">
+                <div class="sparkle-burst" id="sparkleBurst"></div>
+                <h2 class="reward-title">As Promised...</h2>
+                <div class="reward-box">
+                    <div class="reward-icon">👢✨</div>
+                    <h3 class="reward-name">New Boots Are Coming!</h3>
+                    <p class="reward-description">
+                        A promise is a promise! Get ready to pick out your beautiful new boots! 🛍️
+                    </p>
+                </div>
+                <div class="continue-prompt">
+                    <p>But wait... there's more!</p>
+                    <div class="scroll-arrow bounce">↓</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Postbox -->
+        <section class="section postbox-section" id="postboxSection">
+            <div class="postbox-content">
+                <div class="notification-bubble" id="notification">
+                    <span class="notification-icon">📬</span>
+                    <span class="notification-text">You have a letter!</span>
+                </div>
+                
+                <div class="postbox-wrapper">
+                    <div class="postbox" id="postbox">
+                        <!-- Postbox Body -->
+                        <div class="postbox-body">
+                            <div class="postbox-slot"></div>
+                            <div class="postbox-heart">💕</div>
+                        </div>
+                        <!-- Postbox Lid -->
+                        <div class="postbox-lid" id="postboxLid">
+                            <div class="lid-top"></div>
+                            <div class="lid-front"></div>
+                        </div>
+                        <!-- Letter Inside -->
+                        <div class="letter-envelope" id="letterEnvelope">
+                            <div class="envelope-back"></div>
+                            <div class="envelope-front">
+                                <div class="envelope-heart">❤️</div>
+                            </div>
+                            <div class="envelope-flap"></div>
+                        </div>
+                    </div>
+                    <div class="postbox-shadow"></div>
+                </div>
+                
+                <p class="tap-hint" id="tapHint">Tap the postbox to open</p>
+            </div>
+        </section>
+
+        <!-- Section 4: Letter Content (Hidden until opened) -->
+        <section class="section letter-section hidden" id="letterSection">
+            <div class="letter-content">
+                <div class="confetti-container" id="confettiContainer"></div>
+                
+                <div class="letter-paper" id="letterPaper">
+                    <div class="letter-header">
+                        <div class="letter-hearts">💕💕💕</div>
+                    </div>
+                    
+                    <div class="letter-body">
+                        <h2 class="valentine-question">
+                            Will You Be My Valentine?
+                        </h2>
+                        <div class="heart-divider">
+                            <span>♥</span><span>♥</span><span>♥</span>
+                        </div>
+                        <p class="valentine-message">
+                            Every moment with you fills my heart with joy. You make my world brighter, warmer, and full of love.
+                        </p>
+                        <div class="date-invitation">
+                            <div class="date-icon">📅</div>
+                            <h3 class="date-title">Let's Celebrate Together!</h3>
+                            <p class="date-details">
+                                <span class="date-day">February 2nd</span>
+                                <span class="date-note">A special date, just for us</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="letter-footer">
+                        <div class="rsvp-buttons">
+                            <button class="rsvp-btn yes-btn" id="yesBtn">
+                                <span class="btn-icon">💖</span>
+                                <span class="btn-text">Yes!</span>
+                            </button>
+                            <button class="rsvp-btn maybe-btn" id="maybeBtn">
+                                <span class="btn-icon">💝</span>
+                                <span class="btn-text">Absolutely Yes!</span>
+                            </button>
+                        </div>
+                        <p class="signature">
+                            Forever Yours,<br>
+                            <span class="signature-heart">❤️</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Success Response -->
+        <section class="section success-section hidden" id="successSection">
+            <div class="success-content">
+                <div class="mega-heart">💖</div>
+                <h2 class="success-title">You Made Me The Happiest!</h2>
+                <p class="success-message">
+                    I can't wait for our date! See you on February 2nd! 
+                </p>
+                <div class="celebration-emojis">
+                    🎉💕✨🥰💖🌹✨💕🎉
+                </div>
+                <div class="countdown-wrapper">
+                    <p class="countdown-label">Counting down the moments...</p>
+                    <div class="mini-hearts">
+                        <span>💗</span><span>💗</span><span>💗</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
